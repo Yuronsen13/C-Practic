@@ -1,3 +1,3 @@
-﻿Console.WriteLine("Введите число:");
+﻿Console.WriteLine("Введите ирехзначное число:");
 int number = int.Parse(Console.ReadLine ());
 Console.WriteLine ($"Второй символ в числе {(number/10)%10}");
