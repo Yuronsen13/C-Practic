@@ -9,6 +9,6 @@ int N = int.Parse(Console.ReadLine()!);
 int I = 1;
 while (I <= N)
 {
-Console.Write($" {Math.Pow(I,3)},");
+Console.Write($" {I} в квадрате = {Math.Pow(I,3)},");
 I++;
 }
