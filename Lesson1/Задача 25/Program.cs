@@ -19,3 +19,4 @@ int Degree(int num1, int num2)
 
 int degree = Degree(number1, number2);
 Console.WriteLine($"Первое чило {number1} в степени второго числа {number2} равно {degree}");
+
