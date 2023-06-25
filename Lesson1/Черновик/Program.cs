@@ -1,4 +1,5 @@
 ﻿// Пример с семинара (Основа нового кода!)
+// Функция заполениня массива случайными элементами.
 int[] GetRandomArray(int size, int minValue, int maxValue)
 {
     int[] result = new int[size];
@@ -10,6 +11,7 @@ int[] GetRandomArray(int size, int minValue, int maxValue)
     return result;
 }
 
+// Функция нахождения суммы положительных и отрацательных элементов массива через foreach, который проверяет значения в масиве и не меняем массив.
 int[] SumPosNeg(int[] array)
 {
     int[] result = new int[2];
