@@ -3,7 +3,7 @@
 // [345, 897, 568, 234] -> 2
 
 
-int[] startArray = GetArray(4, 100, 1000);
+int[] startArray = GetArray(40, 100, 1000);
 
 int[] GetArray(int size, int minValue, int maxValue)
 {

@@ -7,9 +7,10 @@ int [] array = new int [8];
 
 void FillArray (int[]array);
 {
+    Random r
     for (int i = 0; i <= array.Length; i++)
     {
-    array [i] = new Randome().Next(9);
+    array [i] = new Randome().Next(1, 100);
     }
 }
 
@@ -17,7 +18,7 @@ void PrintArray (int[] array);
 {
     for (int i = 0; i <= array.Length; i++)
     {
-        Console.WriteLine(array [i] + " ");
+        Console.WriteLine(array [i] + " , ");
     }
 }
 
