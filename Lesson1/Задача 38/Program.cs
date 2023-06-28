@@ -3,51 +3,51 @@
 
 
 
-double[] VeschArray(int size)
+double[] VeschArray(int size, int minValue, int maxValue)
 {
     double[] result = new double[size];
-    for (double i = 0; i < size; i++)
+    for (int i = 0; i < size; i++)
     {
-        result[i] = new Random().NextDouble()*100;
+        result[i] = Math.Round(new Random().NextDouble()*100, 2);
     }
     return result;
 }
 
-double MaxArray (double[] array)
+double MaxArray(double[] array)
 {
     double max = array[0];
-        foreach (double el in array)
-        {
-            if (array[el] > max) max = array[el];
-        }
-        return max;
+        for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] > max) max = array[i];
+    }
+    return max;
 }
-            
-double MinArray (double[] array)
+
+double MinArray(double[] array)
 {
     double min = array[0];
-    foreach (double el in array)
-        {
-            if (array[el] < min) min = array[el];          
-        }
-        return min;
-}    
-        
+        for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] < min) min = array[i];
+    }
+    return min;
+}
+
 void PrintArray(double[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
-        Console.Write(array[i]+" ");
+        Console.Write(array[i] + " ");
     }
     Console.WriteLine();
 }
 
-double[] array = VeschArray (5);
+double[] array = VeschArray(5, 0, 100);
 PrintArray(array);
 Console.WriteLine();
 double maxValue = MaxArray(array);
 Console.WriteLine($"max = {maxValue}");
 double minValue = MinArray(array);
 Console.WriteLine($"min = {minValue}");
-Console.WriteLine($"Разница между максимальным и минимальным = {maxValue - minValue}");
+Console.WriteLine($"Разница между максимальным и минимальным = {Math.Round((maxValue - minValue), 2)}");
 
