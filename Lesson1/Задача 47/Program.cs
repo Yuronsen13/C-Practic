@@ -5,34 +5,46 @@
 // 1 -3,3 8 -9,9
 // 8 7,8 -7,1 9
 
-//Ввод строк и столбцов
-Console.Write("Введите количество строк: ");
-int raws = int.Parse(ReadLine);
-Console.Write("Введите количество столбцов:");
-int columns = int.Parse(ReadLine);
-
-double[,] GetArray(int m, int n, int minValue, int maxValue)
+int InputNum(string message)
 {
-    double[,] result = new double[m, n];
-    for (int i = 0; i < m; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            result[i, j] = new Random().Next(minValue, maxValue + 1);
-        }
-    }
-    return result;
+    Console.Write(message);
+    return int.Parse(Console.ReadLine()!);
 }
 
-void PrintArray(double[,] inArray)
+double[,] CreateArray(int rows, int cols)
 {
-    for (int i = 0; i < inArray.GetLength(0); i++)
+    return new double[rows, cols];
+}
+
+void FillArray(double[,] array, int min, int max)
+{
+    Random rnd = new Random();
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int j = 0; j < inArray.GetLength(1); j++)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            Write($"{inArray[i,j]} ");
-        
-        WriteLine();
+            array[i, j] = Math.Round((rnd.NextDouble() + rnd.Next(min, max + 1)), 2);
         }
     }
 }
+
+void PrintArray(double[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write($"{array[i, j]}\t");
+        }
+        Console.WriteLine();
+    }
+}
+
+int rows = InputNum("Введите количество строк: ");
+int columns = InputNum("Введите количество столбцов: ");
+int minValue = InputNum("Введите минимальное значение массива: ");
+int maxValue = InputNum("Введите максимальное значение массива: ");
+Console.WriteLine();
+double[,] myArray = CreateArray(rows, columns);
+FillArray(myArray, minValue, maxValue);
+PrintArray(myArray);
