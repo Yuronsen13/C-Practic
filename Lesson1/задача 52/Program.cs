@@ -14,9 +14,9 @@ int InputNum(string message)
 }
 
 
-int[,] GetArray(int m, int n, int min, int max)
+double[,] GetArray(int m, int n, int min, int max)
 {
-    int[,] result = new int[m, n];
+    double[,] result = new double[m, n];
     for (int i = 0; i < m; i++)
     {
         for (int j = 0; j < n; j++)
@@ -28,7 +28,7 @@ int[,] GetArray(int m, int n, int min, int max)
     return result;
 }
 
-void PrintArray(int[,] inArray)
+void PrintArray(double[,] inArray)
 {
     for (int i = 0; i < inArray.GetLength(0); i++)
     {
@@ -40,14 +40,14 @@ void PrintArray(int[,] inArray)
     }
 }
 
-double[] ResultArray(int[,] array)
+double[] ResultArray(double[,] array)
 {
     double[] result = new double[array.GetLength(1)];
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            result[j] += array[i, j] / array.GetLength(0);
+            result[j] += Math.Round(array[i, j] / array.GetLength(0), 2);
         }
     }
     return result;
@@ -58,7 +58,7 @@ int rows = InputNum("Введите количество строк массив
 
 int columns = InputNum("Введите количество стобцов массива: ");
 
-int[,] array = GetArray(rows, columns, 0, 15);
+double[,] array = GetArray(rows, columns, 0, 15);
 PrintArray(array);
 
 double[] AverageColumns = ResultArray(array);
